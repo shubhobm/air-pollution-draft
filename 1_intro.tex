@@ -6,8 +6,29 @@ UNICEF and Solve for Good have partnered together to analyze various aspects of 
     \item Enabling Citizen Scientists to delve deeper and get involved in Air Quality Measurement globally.
 \end{itemize} 
 %
-Specifically, we aim to (a) model the impact of COVID19 lockdowns on air quality and (b) test whether this has led to an improvement in children’s health. Following the footsteps of existing works like Borneman 2020, Mahato et al., 2020, we hypothesize to find evidence of the positive effects of air quality resulting from the large-scale modal shift to low emissions vehicles post lockdown develop an exploratory visualization platform for local program managers. The platform will provide functions to manage, analyze, and visualize changes in air pollution data at different locations preferably, in countries and cities where UNICEF operates with interests in air pollution monitoring for children’s health.
+Specifically, we aim to (a) model the impact of COVID19 lockdowns on air quality and (b) test whether this has led to an improvement in children’s health. Following the footsteps of existing works like \citet{Borneman,Mahato}, we hypothesize to find evidence of the positive effects of air quality resulting from the large-scale modal shift to low emissions vehicles post lockdown develop an exploratory visualization platform for local program managers. The platform will provide functions to manage, analyze, and visualize changes in air pollution data at different locations preferably, in countries and cities where UNICEF operates with interests in air pollution monitoring for children’s health.
 
-Globally, 93\% of children live in environments where air pollution levels exceed WHO guidelines. There is a strong link between human health and exposure to high levels of air pollution. Long-term exposure to fine particulate matter with a diameter less than 2.5µm (PM2.5) are estimated to cause ~8 million excess deaths annually. Simultaneously, nitrogen dioxide (NO2) results in 4 million new pediatric asthma cases annually (Zander et al. 2020). The impact of air pollution is felt more acutely by the young, with one in every four deaths of children under 5 years is directly or indirectly related to environmental risks (WHO 2018).
+Globally, 93\% of children live in environments where air pollution levels exceed WHO guidelines. There is a strong link between human health and exposure to high levels of air pollution. Long-term exposure to fine particulate matter with a diameter less than 2.5$\mu$m (PM2.5) are estimated to cause ~8 million excess deaths annually. Simultaneously, nitrogen dioxide (NO$_2$) results in 4 million new pediatric asthma cases annually \cite{Venter}. The impact of air pollution is felt more acutely by the young, with one in every four deaths of children under 5 years is directly or indirectly related to environmental risks \cite{who}.
 
-However, the child population’s distribution does not correspond well to the global distribution of air quality sensors. Illustrating these distributions are panel (a) of Figure 2 showing the locations of air quality sensors and panel (b) the global concentration of child populations. Therefore using only the locations of ground-source air quality sensors to infer the effects of exposure to high levels of air pollution on global child populations is difficult, particularly in high populous locations such as Western Africa and the Great Rift Valley.
+However, the child population’s distribution does not correspond well to the global distribution of air quality sensors. Illustrating these distributions are panel (a) of Figure~\ref{fig:maps} showing the locations of air quality sensors and panel (b) the global concentration of child populations. Therefore using only the locations of ground-source air quality sensors to infer the effects of exposure to high levels of air pollution on global child populations is difficult, particularly in high populous locations such as Western Africa and the Great Rift Valley.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=.49\textwidth]{sensormap.png}
+    \includegraphics[width=.49\textwidth]{childmap.png}
+    \caption{Global distribution of (a) air quality sensors, and (b) Child Population, data source: Silent Suffocation in Africa, UNICEF-2019.}
+    \label{fig:maps}
+\end{figure*}
+
+During the Covid-19 lockdowns, fossil fuel consumption has decreased due to lower mobility levels in general, as well as a shift to low-emission modes of transport (such as walking and cycling). This prevents previous models that measure the global distribution of air pollution inaccurate, as they are unable to represent the current changes in air pollution levels due to COVID19 lockdown events \cite{stateof}.
+
+The decreased concentration of harmful emissions resulting from this has the potential to significantly improve cardiovascular health for children, who are more vulnerable to the impact of air pollution \cite{Rees}. At UNICEF and Solve for Good, we wanted to question the children’s health to the global air quality emissions data UNICEF collected during the lockdown to identify if there is a significant improvement in child health with a mass transition to low carbon energy sources for industry and vehicles.
+We take a 3 step approach to our analysis.
+
+\begin{enumerate}
+    \item We develop a large-scale model aimed at providing air quality predictions across geographic regions using widely available data sources,
+    \item Develop a geospatial visualization platform for the exploration of results,
+    \item Fine-tune results of the large-scale model using location-specific heterogeneous data sources for more accurate local-level predictions, and correlate results with child health indicators.
+\end{enumerate}
+
+%We focus on the first two steps in this article series. The first article discusses the importance of air quality monitoring, the available data sources, data setup, and some exploratory results in the current context. In the second article, we shall discuss the details and results pertaining to the global level model. The third article will be aimed at visualization and discussion of results, as well as pointers towards future work on local models and incorporating child health data.
