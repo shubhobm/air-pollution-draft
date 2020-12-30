@@ -1,7 +1,7 @@
 \section{Data}\label{sec:data}
 
 \subsection{Data sources}
-We collect air pollution levels using 1600 air quality stations measuring ground-level PM2.5 concentrations from January 2019 to September 2020 as our target variable. To predict PM2.5 concentrations, we extract weekly averaged time-series values for AOD, NO$_2$, Land Use, and Precipitation satellite data from Google Earth Engine. To extract data from the Google Earth Engine\footnote{\url{https://earthengine.google.com}}, we import data from 1st January 2019 to 11th September 2020 from the following satellites:
+We collect air pollution levels using 1600 air quality stations measuring ground-level PM2.5 concentrations from January 2019 to September 2020 from OpenAQ\footnote{\url{https://openaq.org}} as our target variable. To predict PM2.5 concentrations, we extract weekly averaged time-series values for AOD, NO$_2$, Land Use, and Precipitation satellite data from Google Earth Engine. To extract data from the Google Earth Engine\footnote{\url{https://earthengine.google.com}}, we import data from 1st January 2019 to 11th September 2020 from the following satellites:
 %
 \begin{itemize}
     \item Sentinel-5P NRTI NO$_2$: Near Real-Time Nitrogen Dioxide (NO$_2$),
@@ -15,44 +15,58 @@ The satellites collect data at different temporal and spatial granularities (Tab
 
 \begin{table*}[t]
 \centering
-    \begin{tabular}{lllll}
-    \hline
+\begin{tabular}{l|llll}
+\toprule
 \parbox[t]{2cm}{{\bf Data\\name}} &
-\parbox[t]{3cm}{{\bf Data\\type}} &
-\parbox[t]{4cm}{{\bf Spatial\\resolution}} &
+\parbox[t]{2cm}{{\bf Data\\type}} &
+\parbox[t]{3cm}{{\bf Spatial\\resolution}} &
 \parbox[t]{2cm}{{\bf Temporal\\resolution}} &
-\parbox[t]{4cm}{{\bf Description}}\\\hline
+\parbox[t]{5cm}{{\bf Description}}\\\midrule
 \parbox[t]{2cm}{PM2.5} &
-\parbox[t]{3cm}{Ground Sensor} &
+\parbox[t]{2cm}{Ground\\Sensor} &
 \parbox[t]{3cm}{Point location\\(latitude/longitude)} &
 \parbox[t]{2cm}{Hourly} &
-\parbox[t]{4cm}{Weekly averaged PM2.5 collected by ground station, source: OpenAQ\footnote{\url{https://openaq.org}}}\\
-    Oxford Covid19 Data        &
-    Tabular       & 
-    National (192 countries)                & 
-    Daily               & 
-    Lockdown information\\
-    Precipitation              &
-    Raster        &
-    0.1 arc degrees                         &
-    Daily               &
-    Snapshot of hourly precipitation rate (source: GSMaP Operational: Global Satellite Mapping of Precipitation)\\
-    AOD                        &
-    Raster        &
-    1000 meters                             &
-    Daily               &
-    Blue band (0.47 $\mu$m) aerosol optical depth over land (Source: MCD19A2.006: Terra \& Aqua MAIAC Land Aerosol Optical Depth)\\
-    NO2                        &
-    Raster        &
-    0.01 arc degrees                        &
-    Daily               &
-    Total vertical column of NO2 = ratio of NO2 slant column density and total air mass factor). Source: Sentinel-5P NRTI NO2: Near Real-Time Nitrogen Dioxide\\
-    Population Density         &
-    Raster        & 30 arc seconds                          & Daily               &
-    The estimated number of persons per square kilometer. Source: GPWv411: Population Density (Gridded Population of the World Version 4.11)                   \\
-    Average Population Density & Tabular       & National                                & Yearly              & ~\\
-    Sensor Latitude            & Tabular       & 10m                                     & N/A                 & ~\\
-    Sensor Longitude           & Tabular       & 10m                                     & N/A                 & ~\\\hline
+\parbox[t]{5cm}{Weekly averaged PM2.5 collected by ground station, source: OpenAQ}\\\midrule
+\parbox[t]{2cm}{Oxford COVID19 Data} &
+\parbox[t]{2cm}{Tabular} &
+\parbox[t]{3cm}{National\\(192 countries)} &
+\parbox[t]{2cm}{Daily} &
+\parbox[t]{5cm}{Lockdown information}\\\midrule
+\parbox[t]{2cm}{Precipitation} &
+\parbox[t]{2cm}{Raster} &
+\parbox[t]{3cm}{0.1 arc degrees} &
+\parbox[t]{2cm}{Daily} &
+\parbox[t]{5cm}{Snapshot of hourly precipitation rate, source: GSMaP Operational}\\\midrule
+\parbox[t]{2cm}{AOD} &
+\parbox[t]{2cm}{Raster} &
+\parbox[t]{3cm}{1000 meters} &
+\parbox[t]{2cm}{Daily} &
+\parbox[t]{5cm}{Blue band (0.47 $\mu$m) aerosol optical depth over land, source: MCD19A2.006}\\\midrule
+\parbox[t]{2cm}{NO$_2$} &
+\parbox[t]{2cm}{Raster} &
+\parbox[t]{3cm}{0.01 arc degrees} &
+\parbox[t]{2cm}{Daily} &
+\parbox[t]{5cm}{Total vertical column of NO$_2$ = ratio of NO$_2$ slant column density and total air mass factor, source: Sentinel-5P NRTI NO$_2$}\\\midrule
+\parbox[t]{2cm}{Population Density} &
+\parbox[t]{2cm}{Raster} &
+\parbox[t]{3cm}{30 arc seconds} &
+\parbox[t]{2cm}{Daily} &
+\parbox[t]{5cm}{The estimated number of persons per square kilometer, source: GPWv411}\\\midrule
+\parbox[t]{2cm}{Average\\Pop. Den.} &
+\parbox[t]{2cm}{Tabular} &
+\parbox[t]{3cm}{National} &
+\parbox[t]{2cm}{Yearly} &
+\parbox[t]{5cm}{}\\\midrule
+\parbox[t]{2cm}{Sensor\\Latitude} &
+\parbox[t]{2cm}{Tabular} &
+\parbox[t]{3cm}{10m} &
+\parbox[t]{2cm}{N/A} &
+\parbox[t]{5cm}{}\\\midrule
+\parbox[t]{2cm}{Sensor\\Longitude} &
+\parbox[t]{2cm}{Tabular} &
+\parbox[t]{3cm}{10m} &
+\parbox[t]{2cm}{N/A} &
+\parbox[t]{5cm}{}\\\bottomrule
     \end{tabular}
     \caption{Details on the datasets used.}
     \label{tab:datatable}
